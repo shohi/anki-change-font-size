@@ -1,1 +1,13 @@
-{"name": "Change Font Size", "config": {"font-size": 24}, "disabled": false, "mod": 0, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0, "update_enabled": true}
+{
+  "name": "Change Font Size",
+  "config": {
+    "font-size": 18
+  },
+  "disabled": false,
+  "mod": 0,
+  "conflicts": [],
+  "max_point_version": 0,
+  "min_point_version": 0,
+  "branch_index": 0,
+  "update_enabled": true
+}
