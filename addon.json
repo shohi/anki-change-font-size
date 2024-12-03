@@ -1,0 +1,16 @@
+{
+    "display_name": "Change Font Size",
+    "module_name": "change-font-size",
+    "repo_name": "anki-change-font-size",
+    "ankiweb_id": "",
+    "author": "shohi",
+    "contact": "https://github.com/shohi/anki-change-font-size",
+    "homepage": "https://github.com/shohi/anki-change-font-size",
+    "copyright_start": 2024,
+    "tags": "font",
+    "conflicts": [],
+    "targets": [
+        "anki24"
+    ],
+    "min_anki_version": "24.11"
+}
