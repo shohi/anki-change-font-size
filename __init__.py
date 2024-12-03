@@ -1,6 +1,8 @@
 from aqt import mw
 from aqt.qt import QApplication, QWebEngineProfile, QWebEngineSettings
 
+# Version: 0.0.1
+
 # NOTE: only support Qt6
 
 # --------------------- config --------------------
