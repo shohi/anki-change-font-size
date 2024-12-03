@@ -22,4 +22,8 @@ def config_handler(config):
 def register_config_handler(mod):
     mw.addonManager.setConfigUpdatedAction(mod, config_handler)
 
+# use current setting
+config_handler(mw.addonManager.getConfig(__name__))
+
+# register handler
 register_config_handler(__name__)
