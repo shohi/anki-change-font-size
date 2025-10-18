@@ -1,29 +1,34 @@
+"""
+Anki addon to change font size for UI and web content.
+Version: 0.0.1
+Note: Only supports Qt6 (Anki 24.11+)
+"""
+
 from aqt import mw
 from aqt.qt import QApplication, QWebEngineProfile, QWebEngineSettings
 
-# Version: 0.0.1
 
-# NOTE: only support Qt6
+def apply_font_size(config: dict) -> None:
+    """Apply font size configuration to Anki UI and web content."""
+    font_size = config.get("font-size", 18)
 
-# --------------------- config --------------------
-# config only available in addon's init module
-def config_handler(config):
-    font_size = config['font-size']
-
-    # current window
+    # Set UI font size
     font = QApplication.font()
     font.setPixelSize(font_size)
     QApplication.setFont(font)
 
-    # web engine window
-    weps = QWebEngineProfile.defaultProfile().settings()
-    weps.setFontSize(QWebEngineSettings.FontSize.MinimumFontSize, font_size)
+    # Set web content minimum font size
+    profile = QWebEngineProfile.defaultProfile()
+    if profile:
+        settings = profile.settings()
+        if settings:
+            settings.setFontSize(QWebEngineSettings.FontSize.MinimumFontSize, font_size)
 
-def register_config_handler(mod):
-    mw.addonManager.setConfigUpdatedAction(mod, config_handler)
 
-# use current setting
-config_handler(mw.addonManager.getConfig(__name__))
+# Apply current configuration
+config = mw.addonManager.getConfig(__name__)
+if config:
+    apply_font_size(config)
 
-# register handler
-register_config_handler(__name__)
+# Register handler for configuration updates
+mw.addonManager.setConfigUpdatedAction(__name__, apply_font_size)

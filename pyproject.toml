@@ -1,0 +1,11 @@
+[project]
+name = "anki-change-font-size"
+version = "0.1.0"
+description = "Anki add-on to change font size"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aqt[qt6]>=25.9.2",
+    "mypy>=1.18.2",
+    "ruff>=0.14.1",
+]
